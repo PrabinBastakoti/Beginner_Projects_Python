@@ -3,9 +3,9 @@ from random import randint
 t=["Rock","Paper","Scissors"]
 
 computer = t[randint(0,2)]
-player = False
+player = True
 
-while player == False:
+while player == True:
     player=input("Rock, Paper, Scissors? ")
     if player == computer:
         print("Tie!")
@@ -26,5 +26,7 @@ while player == False:
             print("You win!", player, "cuts", computer)
     else:
         print("That's not a valid play. Check your spelling!")
-    player = False
+        
+    player = True
+
    
