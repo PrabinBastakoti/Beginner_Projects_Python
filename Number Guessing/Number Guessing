@@ -1,0 +1,29 @@
+from random import randint
+computer = randint(0,100)
+guess=""
+guess_count=0
+guess_limit=20
+need_hint=False
+while guess!=computer:
+    if guess_count<guess_limit:
+        try:
+            guess=int(input("Enter Your Guess: "))
+            guess_count +=1
+            if guess!=computer:
+                print("Wrong Number, Guess Again.")
+                need_hint= True
+                if computer<guess:
+                            print("Hint: You Guessed Too High.")
+                elif computer>guess:
+                            print("Hint: You Guessed Too Small")
+        except ValueError as ve:
+            print("You Can Only Enter Integers.")  
+else:
+    print("Congratulations,You Guessed The Correct Word.")
+       
+                    
+                        
+        
+
+
+
