@@ -1,11 +1,12 @@
 
-def fibonacci_list(user_input):
+
+def fibonacci_list(number):
     a= 0
     b = 1
     c = 0
     f_terms = [c]
 
-    while a <= user_input:
+    while a <= number:
         f_terms.append(c)
         c = a + b
         a = b
@@ -20,11 +21,16 @@ def is_fibonacci(user_input):
 def main():
     
     while True:
-        user_input = int(input("Enter the number you want to check >>> "))
+        try:
+            user_input = int(input("Enter the number you want to check >>> "))
+        except ValueError:
+            print("Invalid input, Please Try again.\n")
+            continue
+
         if is_fibonacci(user_input):
-            print(f"{user_input} is a Fibonacci")
+            print(f"{user_input} is a Fibonacci\n")
         else:
-            print(f"{user_input} is not a Fibonacci")
+            print(f"{user_input} is not a Fibonacci\n")
     
 if __name__ == '__main__':
     main()
