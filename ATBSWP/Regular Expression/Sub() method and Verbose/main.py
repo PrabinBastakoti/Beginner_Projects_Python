@@ -1,3 +1,4 @@
+from ast import pattern
 import re
 namesRegex = re.compile(r'Agent \w+')
 print(namesRegex.findall('Agent Alice gave the secret documents to Agent Bob.'))
@@ -15,6 +16,8 @@ verboseregex = re.compile(r'''
 \d\d\d  # first 3 digits
 -       # second dash
 \d\d\d\d # last 4 digits
-\sx\d{2,4} # extension, like x1234''',re.IGNORECASE | re.DOTALL | re.VERBOSE)
+\sx\d{2,4} # extension, like x1234'''\
+,re.IGNORECASE | re.DOTALL | re.VERBOSE) # verbose helps to make code nicer by allowing to add comments and visually separate logical section of the pattern
+
 
 
